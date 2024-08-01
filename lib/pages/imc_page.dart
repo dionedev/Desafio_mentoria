@@ -34,6 +34,7 @@ class _ImcPageState extends State<ImcPage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
                 controller: controllerAltura,
@@ -67,7 +68,10 @@ class _ImcPageState extends State<ImcPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 30),
-                child: Text('$resultado'),
+                child: Text(
+                  '$resultado',
+                  style: const TextStyle(fontSize: 18),
+                ),
               )
             ],
           ),
