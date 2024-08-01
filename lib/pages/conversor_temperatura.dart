@@ -43,8 +43,9 @@ class _ConversorTemperaturaState extends State<ConversorTemperatura> {
       ),
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.only(top: 40, right: 16, left: 16),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
               controller: temperaturaController,
@@ -54,11 +55,11 @@ class _ConversorTemperaturaState extends State<ConversorTemperatura> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 40, bottom: 40),
+              padding: const EdgeInsets.symmetric(vertical: 30),
               child: Text(
                 '$resultadoFormatado',
                 style:
-                    const TextStyle(fontSize: 80, fontWeight: FontWeight.w600),
+                    const TextStyle(fontSize: 70, fontWeight: FontWeight.w600),
               ),
             ),
             Row(

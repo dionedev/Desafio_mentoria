@@ -13,7 +13,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: 'imc',
+      initialRoute: 'conversorTemperatura',
       routes: {
         'imc': (context) => const ImcPage(),
         'jogoDado': (context) => const JogoDado(),
