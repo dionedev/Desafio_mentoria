@@ -22,6 +22,9 @@ class _ImcPageState extends State<ImcPage> {
     }
 
     resultado = 'O IMC é ${peso / (altura * altura)}';
+
+    controllerAltura.clear();
+    controllerPeso.clear();
   }
 
   @override
