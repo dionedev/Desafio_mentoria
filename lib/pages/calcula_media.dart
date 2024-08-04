@@ -8,29 +8,43 @@ class CalculaMedia extends StatefulWidget {
 }
 
 class _CalculaMediaState extends State<CalculaMedia> {
-  TextEditingController controllerPrimeiroNumero = TextEditingController();
-  TextEditingController controllerSegundoNumero = TextEditingController();
-  TextEditingController controllerTerceiroNumero = TextEditingController();
-
+  TextEditingController controllerNumero = TextEditingController();
+  List<double> numerosDigitados = [];
   String resultadoMedia = '';
 
-  calcularMedia() {
-    final primeiroNumero = double.tryParse(controllerPrimeiroNumero.text);
-    final segundoNumero = double.tryParse(controllerSegundoNumero.text);
-    final terceiroNumero = double.tryParse(controllerTerceiroNumero.text);
+  adicionarNumero() {
+    final primeiroNumero = double.tryParse(controllerNumero.text);
 
-    if (primeiroNumero == null ||
-        segundoNumero == null ||
-        terceiroNumero == null) {
-      resultadoMedia = 'Insira um número';
-      return;
+    if (primeiroNumero != null) {
+      setState(() {
+        numerosDigitados.add(primeiroNumero);
+        resultadoMedia = '';
+      });
+    } else {
+      setState(() {
+        resultadoMedia = 'Digite um número';
+      });
     }
-    resultadoMedia =
-        'Média: ${(primeiroNumero + segundoNumero + terceiroNumero) / 3}';
+    controllerNumero.clear();
+  }
 
-    controllerPrimeiroNumero.clear();
-    controllerSegundoNumero.clear();
-    controllerTerceiroNumero.clear();
+  calcularMedia() {
+    if (numerosDigitados.isNotEmpty) {
+      double soma = 0;
+
+      for (int i = 0; i < numerosDigitados.length; i++) {
+        soma = soma + numerosDigitados[i];
+      }
+
+      double media = soma / numerosDigitados.length;
+      setState(() {
+        resultadoMedia = 'Média: $media';
+      });
+    } else {
+      setState(() {
+        resultadoMedia = 'Digite um número para calcular';
+      });
+    }
   }
 
   @override
@@ -45,45 +59,52 @@ class _CalculaMediaState extends State<CalculaMedia> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: controllerPrimeiroNumero,
-              decoration: const InputDecoration(
-                hintText: 'Digite o primeiro número',
-                border: OutlineInputBorder(),
-              ),
-              keyboardType: TextInputType.number,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: TextField(
-                controller: controllerSegundoNumero,
-                decoration: const InputDecoration(
-                  hintText: 'Digite o segundo número',
-                  border: OutlineInputBorder(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 300,
+                  child: TextField(
+                    controller: controllerNumero,
+                    decoration: const InputDecoration(
+                      hintText: 'Digite um número',
+                      border: OutlineInputBorder(),
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
                 ),
-                keyboardType: TextInputType.number,
-              ),
-            ),
-            TextField(
-              controller: controllerTerceiroNumero,
-              decoration: const InputDecoration(
-                hintText: 'Digite o terceiro número',
-                border: OutlineInputBorder(),
-              ),
-              keyboardType: TextInputType.number,
+                GestureDetector(
+                  onTap: () {
+                    adicionarNumero();
+                  },
+                  child: Container(
+                    height: 57,
+                    width: 54,
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Center(
+                        child: Text(
+                      '+',
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                    )),
+                  ),
+                ),
+              ],
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 24, bottom: 24),
+              padding: const EdgeInsets.symmetric(vertical: 30),
               child: ElevatedButton(
                 onPressed: () {
                   calcularMedia();
-                  setState(() {});
                 },
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(270, 48),
                 ),
                 child: const Text(
-                  'Calcular Média',
+                  'Calcular média',
                   style: TextStyle(
                     fontSize: 16,
                     color: Color.fromRGBO(45, 44, 44, 1),
@@ -95,7 +116,7 @@ class _CalculaMediaState extends State<CalculaMedia> {
             Text(
               '$resultadoMedia',
               style: const TextStyle(fontSize: 18),
-            )
+            ),
           ],
         ),
       )),
