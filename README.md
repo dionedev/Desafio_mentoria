@@ -48,9 +48,6 @@
 
 #### Ítens praticados:
 - **Switch:** Estrutura para controle de fluxo. Com esta estrutura, podemos definir casos (blocos) que serão executados de acordo com o valor de uma variável.
-- **StatefulWidget:** Widget para trabalhar com componentes que precisam ter estados.
-- **TextEditingController:** Usado para obter o valor de inputs, como widget TextField.
-- **setState:** Método para atualizar a tela, quando o estado de algum componente é alterado.
 
 <br>
 
@@ -67,9 +64,7 @@
 ### App Calculadora de Média
 
 #### Ítens praticados:
-- **StatefulWidget:** Widget para trabalhar com componentes que precisam ter estados.
-- **TextEditingController:** Usado para obter o valor de inputs, como widget TextField.
-- **setState:** Método para atualizar a tela, quando o estado de algum componente é alterado.
+
 - **Coleção List:** Neste app usei o List para armazenar os números digitados pelo usuário, ao invés de usar um input para cada entrada de um números.
 
 <br>
@@ -83,6 +78,26 @@
 </div>
 
 <br>
+
+### App Par ou Impar
+
+#### Ítens praticados:
+
+- **setState:** Melhorei a forma de usar o setState. Neste app usei apenas uma chamada do setState na função de verificar o número, desta forma, evita reenderizar a tela desnecessariamente.
+
+<br>
+
+<div align="center">
+  <img 
+    src="https://github.com/user-attachments/assets/c53d47c4-ed52-443a-8c22-56ebdfde839a"
+    width="300"
+    alt="Imagem do aplicativo Par ou Impar"
+  />
+</div>
+
+<br>
+
+
 
 
 
