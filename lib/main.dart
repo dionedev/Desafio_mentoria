@@ -1,3 +1,4 @@
+import 'package:app_imc/pages/ano_bissexto.dart';
 import 'package:app_imc/pages/calcula_media.dart';
 import 'package:app_imc/pages/conversor_temperatura.dart';
 import 'package:app_imc/pages/imc_page.dart';
@@ -15,13 +16,14 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: 'parOuImpar',
+      initialRoute: 'anoBissexto',
       routes: {
         'imc': (context) => const ImcPage(),
         'jogoDado': (context) => const JogoDado(),
         'conversorTemperatura': (context) => const ConversorTemperatura(),
         'calculaMedia': (context) => const CalculaMedia(),
         'parOuImpar': (context) => const ParOuImpar(),
+        'anoBissexto': (context) => const AnoBissexto(),
       },
     );
   }
