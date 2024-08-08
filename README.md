@@ -6,7 +6,7 @@
 
 <br>
 
-### App IMC
+### 1˚ App IMC
 
 #### Ítens praticados:
 - **StatefulWidget:** Widget para trabalhar com componentes que precisam ter estados.
@@ -25,7 +25,7 @@
 
 <br>
 
-### App Conversor de Temperatura
+### 2˚ App Conversor de Temperatura
 
 #### Ítens praticados:
 - **StatefulWidget:** Widget para trabalhar com componentes que precisam ter estados.
@@ -44,7 +44,7 @@
 
 <br>
 
-### App Jogo de Dado
+### 3˚ App Jogo de Dado
 
 #### Ítens praticados:
 - **Switch:** Estrutura para controle de fluxo. Com esta estrutura, podemos definir casos (blocos) que serão executados de acordo com o valor de uma variável.
@@ -61,7 +61,7 @@
 
 <br>
 
-### App Calculadora de Média
+### 4˚ App Calculadora de Média
 
 #### Ítens praticados:
 
@@ -79,7 +79,7 @@
 
 <br>
 
-### App Par ou Impar
+### 5˚ App Par ou Impar
 
 #### Ítens praticados:
 
@@ -96,6 +96,39 @@
 </div>
 
 <br>
+
+### 6˚ App Ano Bissexto
+
+<br>
+
+<div align="center">
+  <img 
+    src="https://github.com/user-attachments/assets/31ffa616-b239-4538-94fc-9a7399151ef0"
+    width="300"
+    alt="Imagem do aplicativo Ano Bissexto"
+  />
+</div>
+
+<br>
+
+### 7˚ App Verificador de Idade
+
+#### Ítens praticados:
+
+- **Estrutura condicional**
+
+<br>
+
+<div align="center">
+  <img 
+    src="https://github.com/user-attachments/assets/62744197-ac78-428a-b121-b195f7518983"
+    width="300"
+    alt="Imagem do aplicativo Verificador de Idade"
+  />
+</div>
+
+<br>
+
 
 
 
